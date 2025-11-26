@@ -1,6 +1,6 @@
 [package]
 name = "iau_constellations"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 authors = ["Oliver Webb <oliverwebb8192@gmail.com>"]
 description = "IAU Contellation Determination Algorithm in Rust"

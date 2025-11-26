@@ -16,18 +16,14 @@ pub const CONSTELLATION_NAMES: [&str; 88] = [
     "Andromeda",
     "Antlia",
     "Apus",
-    "Aquarius",
     "Aquila",
+    "Aquarius",
     "Ara",
     "Aries",
     "Auriga",
     "Boötes",
     "Caelum",
     "Camelopardalis",
-    "Cancer",
-    "Canes Venatici",
-    "Canis Major",
-    "Canis Minor",
     "Capricornus",
     "Carina",
     "Cassiopeia",
@@ -36,13 +32,17 @@ pub const CONSTELLATION_NAMES: [&str; 88] = [
     "Cetus",
     "Chamaeleon",
     "Circinus",
+    "Canis Major",
+    "Canis Minor",
+    "Cancer",
     "Columba",
     "Coma Berenices",
     "Corona Australis",
     "Corona Borealis",
-    "Corvus",
     "Crater",
     "Crux",
+    "Corvus",
+    "Canes Venatici",
     "Cygnus",
     "Delphinus",
     "Dorado",
@@ -59,9 +59,9 @@ pub const CONSTELLATION_NAMES: [&str; 88] = [
     "Indus",
     "Lacerta",
     "Leo",
-    "Leo Minor",
     "Lepus",
     "Libra",
+    "Leo Minor",
     "Lupus",
     "Lynx",
     "Lyra",
@@ -78,22 +78,22 @@ pub const CONSTELLATION_NAMES: [&str; 88] = [
     "Perseus",
     "Phoenix",
     "Pictor",
-    "Pisces",
     "Piscis Austrinus",
+    "Pisces",
     "Puppis",
     "Pyxis",
     "Reticulum",
-    "Sagitta",
-    "Sagittarius",
-    "Scorpius",
     "Sculptor",
+    "Scorpius",
     "Scutum",
     "Serpens",
     "Sextans",
+    "Sagitta",
+    "Sagittarius",
     "Taurus",
     "Telescopium",
-    "Triangulum",
     "Triangulum Australe",
+    "Triangulum",
     "Tucana",
     "Ursa Major",
     "Ursa Minor",
@@ -485,7 +485,17 @@ mod tests {
     use super::*;
     #[test]
     fn test_constell() {
-        assert_eq!(CONSTELLATION_NAMES[constell_1875(85.0, 225.0) as usize], "Ursa Minor");
-        assert_eq!(CONSTELLATION_NAMES[constell_1875(180.0, 0.0) as usize], "Virgo");
+        assert_eq!(
+            CONSTELLATION_NAMES[constell_1875(180.0, -45.0) as usize],
+            "Centaurus"
+        );
+        assert_eq!(
+            CONSTELLATION_NAMES[constell_1875(85.0, 225.0) as usize],
+            "Ursa Minor"
+        );
+        assert_eq!(
+            CONSTELLATION_NAMES[constell_1875(180.0, 0.0) as usize],
+            "Virgo"
+        );
     }
 }
